@@ -3,8 +3,6 @@
  * @module module:addons/TPropTypes
  */
 import {PropTypes} from 'react';
-import {createPropType} from 'react-custom-proptypes';
-import schema from 'validate';
 import isObject from 'lodash/isObject';
 import isArray from 'lodash/isArray';
 import isString from 'lodash/isString';
@@ -20,56 +18,36 @@ function invalidProp(propName, componentName, expected) {
  * React Router Location object
  * @member routerLocation
  */
-const routerLocationSchema = schema({
-	hash: {type: 'string', required: true, message: 'hash must be a string and is required.'},
-	key: {type: 'string', message: 'key must be a string.'},
-	pathname: {type: 'string', required: true, message: 'pathname must be a string and is required.'},
-	search: {type: 'string', required: true, message: 'search must be a string and is required.'},
-	state: {type: 'object', required: true, message: 'state must be an object.'},
-}, {strip: false});
-
-const routerLocation = createPropType(
-	prop => {
-		const errs = routerLocationSchema.validate(prop);
-		if (errs.length > 0) {
-			throw new TypeError(`routerLocation.${errs[0].message}`);
-		}
-	},
-);
-
+const routerLocation = PropTypes.shape({
+	hash: PropTypes.string.isRequired,
+	key: PropTypes.string,
+	pathname: PropTypes.string.isRequired,
+	search: PropTypes.string.isRequired,
+	state: PropTypes.object,
+});
 
 /**
  * React Router props
  * @member router
  */
-const routerSchema = schema({
-	createHref: {type: 'function', required: true, message: 'createHref must be a function and is required.'},
-	createKey: {type: 'function', required: true, message: 'createKey must be a function and is required.'},
-	createLocation: {type: 'function', required: true, message: 'createLocation must be a function and is required.'},
-	createPath: {type: 'function', required: true, message: 'createPath must be a function and is required.'},
-	getCurrentLocation: {type: 'function', required: true, message: 'getCurrentLocation must be a function and is required.'},
-	go: {type: 'function', required: true, message: 'go must be a function and is required.'},
-	goBack: {type: 'function', required: true, message: 'goBack must be a function and is required.'},
-	goForward: {type: 'function', required: true, message: 'goForward must be a function and is required.'},
-	isActive: {type: 'function', required: true, message: 'isActive must be a function and is required.'},
-	listen: {type: 'function', required: true, message: 'listen must be a function and is required.'},
-	listenBefore: {type: 'function', required: true, message: 'listenBefore must be a function and is required.'},
-	push: {type: 'function', required: true, message: 'push must be a function and is required.'},
-	replace: {type: 'function', required: true, message: 'replace must be a function and is required.'},
-	setRouteLeaveHook: {type: 'function', required: true, message: 'setRouteLeaveHook must be a function and is required.'},
-	transitionTo: {type: 'function', required: true, message: 'transitionTo must be a function and is required.'},
-	unsubscribe: {type: 'function', required: true, message: 'unsubscribe must be a function and is required.'},
+const router = PropTypes.shape({
+	createHref: PropTypes.func.isRequired,
+	createKey: PropTypes.func.isRequired,
+	createLocation: PropTypes.func.isRequired,
+	createPath: PropTypes.func.isRequired,
+	getCurrentLocation: PropTypes.func.isRequired,
+	go: PropTypes.func.isRequired,
+	goBack: PropTypes.func.isRequired,
+	goForward: PropTypes.func.isRequired,
+	isActive: PropTypes.func.isRequired,
+	listen: PropTypes.func.isRequired,
+	listenBefore: PropTypes.func.isRequired,
+	push: PropTypes.func.isRequired,
+	replace: PropTypes.func.isRequired,
+	setRouteLeaveHook: PropTypes.func.isRequired,
+	transitionTo: PropTypes.func.isRequired,
+	unsubscribe: PropTypes.func.isRequired,
 });
-
-const router = createPropType(
-	prop => {
-		const errs = routerSchema.validate(prop);
-		if (errs.length > 0) {
-			throw new TypeError(`router.${errs[0].message}`);
-		}
-	},
-);
-
 
 /**
  * React children elements
