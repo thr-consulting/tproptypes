@@ -5,12 +5,12 @@ var nodeExternals = require('webpack-node-externals');
 const root = path.resolve(__dirname);
 
 module.exports = {
-	entry: './src/index.js',
+	entry: './lib/index.js',
 	target: 'node',
 	devtool: 'source-map',
 	externals: [nodeExternals()],
 	output: {
-		path: path.resolve(root, 'lib'),
+		path: path.resolve(root, 'dist'),
 		filename: 'index.js',
 		library: 'tproptypes',
 		libraryTarget: 'umd'
@@ -26,8 +26,7 @@ module.exports = {
 						options: {
 							presets: [
 								['es2015', {loose: true, modules: false}],
-								'stage-1',
-								'react'
+								'stage-1'
 							]
 						}
 					}
