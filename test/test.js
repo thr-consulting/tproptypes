@@ -1,40 +1,59 @@
-import 'babel-polyfill'
-import 'jsdom-global/register';
-import chai, {expect} from 'chai';
-import chaiEnzyme from 'chai-enzyme';
-import {mount, shallow} from 'enzyme';
-import React, {Component} from 'react';
+import React from 'react';
 import TPropTypes from '../lib';
+import {LocalDate} from 'js-joda';
+import Money from 'js-money';
 
-chai.use(chaiEnzyme());
+before(() => {
+	sinon.stub(console, 'error').callsFake(warning => {
+		throw new Error(warning);
+	})
+});
+after(() => {
+	console.error.restore()
+});
 
-const routerLocation = {
-	hash: '',
-	pathname: '/',
-	search: ',',
-	state: {}
-};
+describe('Router Location', () => {
+	function RouterLocationComponent(props) { return <div/>; }
+	RouterLocationComponent.propTypes = {
+		routerLocation: TPropTypes.routerLocation.isRequired,
+	};
 
-function RouterLocationComponent(props) {
-	return <div/>;
-}
-RouterLocationComponent.propTypes = {
-	routerLocation: TPropTypes.routerLocation.isRequired,
-};
+	it('renders without error', () => {
+		shallow(<RouterLocationComponent routerLocation={{
+			hash: '',
+			pathname: '/',
+			search: ',',
+			state: {}
+		}}/>);
+	});
+});
 
-class Fixture extends Component {
-	render() {
-		return (
-			<div>
-				<RouterLocationComponent routerLocation={routerLocation}/>
-			</div>
-		);
-	}
-}
+describe('Local Date', () => {
+	function Comp(props) { return <div/>; }
+	Comp.propTypes = { date: TPropTypes.localDate };
 
-const wrapper = mount(<Fixture/>);
+	it('renders without error', () => {
+		shallow(<Comp date={LocalDate.now()}/>);
+	});
+});
 
-describe('TPropTypes', () => {
-	expect(wrapper.find(RouterLocationComponent).first()).to.have.prop('routerLocation');
-	expect(wrapper.find(RouterLocationComponent).first()).to.have.prop('routerLocation').deep.equal({});
+describe('Money', () => {
+	function Comp(props) { return <div/>; }
+	Comp.propTypes = { money: TPropTypes.money };
+
+	it('renders without error', () => {
+		shallow(<Comp money={new Money(500, Money.CAD)}/>);
+	});
+});
+
+describe('String or Number', () => {
+	function Comp(props) { return <div/>; }
+	Comp.propTypes = {
+		string: TPropTypes.stringOrNumber,
+		num: TPropTypes.stringOrNumber,
+	};
+
+	it('renders without error', () => {
+		shallow(<Comp string="blah" num={5} />);
+	});
 });
