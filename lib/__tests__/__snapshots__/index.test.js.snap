@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Local Date renders without error 1`] = `
+<div>
+  2017-06-23
+</div>
+`;
+
+exports[`Money renders without error 1`] = `
+<div>
+  500
+   
+  CAD
+</div>
+`;
+
+exports[`Router Location renders without error 1`] = `
+<div>
+  #myhash
+  /this/is/my/path
+  ?var=123
+</div>
+`;
+
+exports[`RouterHistory renders without error 1`] = `
+<div>
+  PUSH
+  15
+</div>
+`;
+
+exports[`String or Number renders without error 1`] = `
+<div>
+  blah
+   
+  5
+</div>
+`;

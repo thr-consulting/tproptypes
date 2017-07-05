@@ -1,0 +1,47 @@
+{
+  "parser": "babel-eslint",
+  "plugins": [
+    "react", "babel", "flowtype", "jest"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "extends": ["eslint:recommended", "plugin:react/recommended", "airbnb"],
+  "env": {
+    "commonjs": true,
+    "es6": true,
+    "node": true,
+    "jest/globals": true
+  },
+	"globals": {
+		"process": false,
+		"window": true,
+		"document": true,
+    "Event": true,
+    "HTMLFormElement": true
+	},
+  "settings": {
+    "flowtype": {
+      "onlyFilesWithFlowAnnotation": true
+    }
+  },
+  "rules": {
+    "no-tabs": "off",
+    "object-curly-spacing": ["error", "never"],
+    "indent": ["error", "tab", {"SwitchCase": 1}],
+    "max-len": ["error", {"code": 200}],
+    "no-underscore-dangle": ["error", {"allowAfterThis":  true}],
+    "arrow-parens": ["error", "as-needed"],
+
+    "react/jsx-filename-extension": ["error", {"extensions": [".js", ".jsx"]}],
+    "react/jsx-tag-spacing": ["error", {"beforeSelfClosing": "never"}],
+    "react/jsx-indent": ["error", "tab"],
+    "react/require-default-props": "off",
+    "react/jsx-indent-props": ["error", "tab"],
+    "react/no-unknown-property": "warn",
+
+    "jsx-a11y/label-has-for": "off"
+  }
+}
