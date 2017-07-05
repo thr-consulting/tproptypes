@@ -1,6 +1,6 @@
 {
   "name": "tproptypes",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Useful React PropType shortcuts",
   "main": "dist/index.js",
   "scripts": {
