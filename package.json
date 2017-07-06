@@ -5,11 +5,13 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "webpack --config webpack.config.babel.js",
-    "prepublish": "npm run build",
+    "prepare": "npm run build",
     "test": "jest",
     "test:watch": "jest --watch",
     "flow": "flow",
-    "lint": "eslint *.js lib"
+    "lint": "eslint *.js lib",
+    "docs": "jsdoc -c jsdoc.json",
+    "docs:explain": "jsdoc -X -c jsdoc.json"
   },
   "jest": {
     "snapshotSerializers": [
@@ -40,16 +42,18 @@
     "eslint-config-airbnb": "^15.0.1",
     "eslint-plugin-babel": "^4.1.1",
     "eslint-plugin-flowtype": "^2.34.1",
-    "eslint-plugin-import": "^2.6.1",
+    "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jest": "^20.0.3",
     "eslint-plugin-jsx-a11y": "^5.0.1",
     "eslint-plugin-react": "^7.0.1",
     "flow-bin": "^0.49.1",
+    "ink-docstrap": "^1.3.0",
     "jest": "^20.0.4",
     "js-joda": "^1.5.2",
     "js-money": "^0.6.3",
     "jsdoc": "^3.4.3",
     "jsdoc-babel": "^0.3.0",
+    "precommit-hook-eslint": "^3.0.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-test-renderer": "^15.6.1",
@@ -59,5 +63,10 @@
   "dependencies": {
     "lodash": "^4.17.4",
     "prop-types": "^15.5.10"
-  }
+  },
+  "pre-commit": [
+    "lint",
+    "flow",
+    "test"
+  ]
 }
