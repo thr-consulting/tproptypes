@@ -1,5 +1,5 @@
 {
-  "name": "tproptypes",
+  "name": "@thx/tproptypes",
   "version": "1.0.0",
   "description": "Useful React PropType shortcuts",
   "main": "dist/index.js",
