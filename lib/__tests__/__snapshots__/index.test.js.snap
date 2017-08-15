@@ -28,11 +28,3 @@ exports[`RouterHistory renders without error 1`] = `
   15
 </div>
 `;
-
-exports[`String or Number renders without error 1`] = `
-<div>
-  blah
-   
-  5
-</div>
-`;
