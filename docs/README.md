@@ -1,54 +1,23 @@
 
 ## Members
 
+* [localDate](#localDate)
+* [money](#money)
+* [reactElements](#reactElements)
 * [location](#location)
 * [history](#history)
-* [reactComponent](#reactComponent)
-* [reactElements](#reactElements)
-* [stringOrNumber](#stringOrNumber)
-* [money](#money)
+* [sFieldMessages](#sFieldMessages) ⇒ <code>\*</code>
 * [localDate](#localDate)
+* [money](#money)
+* [reactElements](#reactElements)
 * [location](#location)
 * [history](#history)
-* [reactComponent](#reactComponent)
-* [reactElements](#reactElements)
-* [stringOrNumber](#stringOrNumber)
-* [money](#money)
-* [localDate](#localDate)
+* [sFieldMessages](#sFieldMessages) ⇒ <code>\*</code>
 
-## Functions
+<a name="localDate"></a>
 
-* [sFieldMessages(props, propName, componentName)](#sFieldMessages) ⇒ <code>\*</code>
-* [sFieldMessages(props, propName, componentName)](#sFieldMessages) ⇒ <code>\*</code>
-
-<a name="location"></a>
-
-## location
-React Router v4 Location object
-
-**Kind**: global variable  
-<a name="history"></a>
-
-## history
-React Router v4 History
-
-**Kind**: global variable  
-<a name="reactComponent"></a>
-
-## reactComponent
-React Component - Either an element or a function
-
-**Kind**: global variable  
-<a name="reactElements"></a>
-
-## reactElements
-React children elements
-
-**Kind**: global variable  
-<a name="stringOrNumber"></a>
-
-## stringOrNumber
-A string or a number
+## localDate
+JS Joda Local Date
 
 **Kind**: global variable  
 <a name="money"></a>
@@ -57,10 +26,10 @@ A string or a number
 JS Money object
 
 **Kind**: global variable  
-<a name="localDate"></a>
+<a name="reactElements"></a>
 
-## localDate
-JS Joda Local Date
+## reactElements
+React children elements
 
 **Kind**: global variable  
 <a name="location"></a>
@@ -73,44 +42,14 @@ React Router v4 Location object
 
 ## history
 React Router v4 History
-
-**Kind**: global variable  
-<a name="reactComponent"></a>
-
-## reactComponent
-React Component - Either an element or a function
-
-**Kind**: global variable  
-<a name="reactElements"></a>
-
-## reactElements
-React children elements
-
-**Kind**: global variable  
-<a name="stringOrNumber"></a>
-
-## stringOrNumber
-A string or a number
-
-**Kind**: global variable  
-<a name="money"></a>
-
-## money
-JS Money object
-
-**Kind**: global variable  
-<a name="localDate"></a>
-
-## localDate
-JS Joda Local Date
 
 **Kind**: global variable  
 <a name="sFieldMessages"></a>
 
-## sFieldMessages(props, propName, componentName) ⇒ <code>\*</code>
+## sFieldMessages ⇒ <code>\*</code>
 SField error messages
 
-**Kind**: global function  
+**Kind**: global variable  
 
 | Param | Type |
 | --- | --- |
@@ -118,12 +57,42 @@ SField error messages
 | propName | <code>string</code> | 
 | componentName | <code>string</code> | 
 
+<a name="localDate"></a>
+
+## localDate
+JS Joda Local Date
+
+**Kind**: global variable  
+<a name="money"></a>
+
+## money
+JS Money object
+
+**Kind**: global variable  
+<a name="reactElements"></a>
+
+## reactElements
+React children elements
+
+**Kind**: global variable  
+<a name="location"></a>
+
+## location
+React Router v4 Location object
+
+**Kind**: global variable  
+<a name="history"></a>
+
+## history
+React Router v4 History
+
+**Kind**: global variable  
 <a name="sFieldMessages"></a>
 
-## sFieldMessages(props, propName, componentName) ⇒ <code>\*</code>
+## sFieldMessages ⇒ <code>\*</code>
 SField error messages
 
-**Kind**: global function  
+**Kind**: global variable  
 
 | Param | Type |
 | --- | --- |
