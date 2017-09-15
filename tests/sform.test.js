@@ -1,6 +1,6 @@
 import React from 'react';
 import {shallow} from 'enzyme';
-import TPropTypes from '..';
+import TPropTypes from '../src/index';
 
 describe('SForm', () => {
 	const Comp = props => (

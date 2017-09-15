@@ -1,7 +1,7 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 import {LocalDate} from 'js-joda';
-import TPropTypes from '..';
+import TPropTypes from '../src/index';
 
 describe('Local Date', () => {
 	const Comp = props => (

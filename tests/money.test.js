@@ -1,7 +1,7 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 import Money from 'js-money';
-import TPropTypes from '..';
+import TPropTypes from '../src/index';
 
 describe('Money', () => {
 	const Comp = props => (
